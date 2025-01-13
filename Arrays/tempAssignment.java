@@ -7,7 +7,7 @@
 
 import java.util.Scanner;
 
-public class Main {
+public class tempAssignment {
     public static void main(String[] args) {
       Scanner input = new Scanner(System.in);
 
@@ -21,18 +21,29 @@ public class Main {
         int sum = 0;
 
         // 2. Need user to enter all of the numbers
-        System.out.println("Please enter the " + totalNumOfDays + "temperatures value: ");
-        for ( imt i = 0; i < totalNumOfDays; i ++) {
-            System.out.print("Please enter the temperatures for day " + (i + 1) + ": ");
+        System.out.println("Please enter the " + totalNumOfDays + " numbers (temps values) ");
+        for ( int i = 0; i < totalNumOfDays; i ++) {
+            System.out.print("Enter temperatures for day " + (i + 1) + ": ");
             temps [i] = input.nextInt();
             sum += temps[i];
         }
 
         // 3. Calculate the average temp
-       // error maybe? double average = (double) sum / totalNumOfDays;
+       double average = (double) sum / totalNumOfDays;
 
+        // 4. Given average temp, how many are above it?
+        int daysAboveAvg = 0;
+        for (int temp : temps) {
+            // checks all temps
+            if ( temp > average){
+                daysAboveAvg++;
+            }
+        }
 
+        // Output
+        System.out.printf("\nAverage temperature: %.1f\n", average);
+        System.out.println("Number of days above average temperature: " + daysAboveAvg);
 
-
+        input.close();
     }
 }
