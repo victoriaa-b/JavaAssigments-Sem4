@@ -20,6 +20,19 @@ public class Main {
         int[] temps = new int[totalNumOfDays];
         int sum = 0;
 
+        // 2. Need user to enter all of the numbers
+        System.out.println("Please enter the " + totalNumOfDays + "temperatures value: ");
+        for ( imt i = 0; i < totalNumOfDays; i ++) {
+            System.out.print("Please enter the temperatures for day " + (i + 1) + ": ");
+            temps [i] = input.nextInt();
+            sum += temps[i];
+        }
+
+        // 3. Calculate the average temp
+       // error maybe? double average = (double) sum / totalNumOfDays;
+
+
+
 
     }
 }
