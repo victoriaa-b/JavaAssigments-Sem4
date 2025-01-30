@@ -93,16 +93,36 @@ public class SingleLinkedList {
     //3. delete anywhere
 
     public void deletingNode(int location){
-        if (head === null) {
+        if (head == null) {
             System.out.println("This LinkedList does not exist! Please try again.");
-            return;
         } else if (location == 0) {
-            // Delete the node from the beginning of the linkedlist
+            // Delete the node from the beginning of the LinkedList
             head = head.next;
             size--;
             if (size == 0) {
                 tail = null;
             }
         }
+        // Delete the node at the ending
+    else if (location >= size) {
+        // use tempNode in order to keep head and tails reference
+            Node tempNode = head;
+            for (int i = 0; i < size - 2; i++) {
+                tempNode = tempNode.next;
+            }
+            tempNode.next = null; // null means no node is next
+            tail = tempNode;
+            size--;
+        }
+        // Delete a node from anywhere in the LinkedList
+    else{
+            Node tempNode = head;
+            for (int i = 0; i < location - 1; i++) {
+                tempNode = tempNode.next;
+            }
+            tempNode.next = tempNode.next.next;
+            size--;
+        }
+        }
+
     }
-}
