@@ -93,7 +93,7 @@ public class SingleLinkedList {
     //3. delete anywhere
 
     public void deletingNode(int location){
-        if (head === null) {
+        if (head == null) {
             System.out.println("This LinkedList does not exist! Please try again.");
             return;
         } else if (location == 0) {
