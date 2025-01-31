@@ -60,7 +60,7 @@ public class UndoRedoManager<T> {
 
     }
 
-    // Displays of the methods
+
     public static void main(String[] args) {
         UndoRedoManager<String> manager = new UndoRedoManager<>();
 
