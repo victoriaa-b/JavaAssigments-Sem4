@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.SingleLinkedList;
 
 // In Class Code - Boiler Code
 public class SingleLinkedList {
