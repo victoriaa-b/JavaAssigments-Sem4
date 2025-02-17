@@ -16,5 +16,28 @@ public class AnimalShelter {
         }
     }
 
+    public Dog dequeueDog(){
+        return dogQueue.poll();
+    }
+
+    public Cat dequeueCat(){
+        return catQueue.poll();
+    }
+
+    public Animal dequeueAny(){
+        if (dogQueue.isEmpty()) return dequeueCat();
+        if (catQueue.isEmpty()) return dequeueDog();
+
+        Dog oldestDog = dogQueue.peek();
+        Cat oldestCat = catQueue.peek();
+
+        // First in - First Out
+        if (oldestDog.getArrivalTime() < oldestCat.getArrivalTime()){
+            return dequeueDog();
+        } else {
+            return dequeueCat();
+        }
+    }
+
 
 }
